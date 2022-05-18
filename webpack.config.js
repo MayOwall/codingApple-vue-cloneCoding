@@ -5,6 +5,8 @@ const { VueLoaderPlugin } = require("vue-loader");
 module.exports = {
   entry: "./src/main.js",
   output: {
+    publicPath: "/",
+    clean: true,
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
   },
@@ -26,4 +28,7 @@ module.exports = {
       template: "./src/index.html",
     }),
   ],
+  devServer: {
+    historyApiFallback: true,
+  },
 };
